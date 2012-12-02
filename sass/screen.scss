@@ -4,3 +4,22 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+
+@import "compass/layout/stretching";
+
+body {
+  @include stretch(10em, 10em, 10em, 10em);
+  line-height:2em;
+
+  .yolk {
+    display: inline-block;
+    padding:6px;
+    color: black;
+    background-color: white;
+  }
+  background-color: black;
+  color:#c3c3c3;
+  form {
+  }
+  text-align:center;
+}
