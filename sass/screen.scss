@@ -1,25 +1,36 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "compass/reset";
+@import "susy";
 
-@import "compass/layout/stretching";
+$total-columns  : 4;
+$column-width   : 4em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+
 
 body {
-  @include stretch(10em, 10em, 10em, 10em);
   line-height:2em;
 
-  .yolk {
-    display: inline-block;
-    padding:6px;
-    color: black;
-    background-color: white;
-  }
   background-color: black;
   color:#c3c3c3;
-  form {
-  }
   text-align:center;
 }
+
+.page {
+  // Establish our default 4-column grid container.
+  @include container;
+
+  // Create a media-query breakpoint at a min-width of 30em
+  // And use a larger 8-column grid within that media-query.
+  @include at-breakpoint(30em 8) {
+    // Establish our new 8-column container.
+    @include container;
+  }
+}
+
+.yolk {
+  display: inline-block;
+  padding:6px;
+  color: black;
+  background-color: white;
+}
+
